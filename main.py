@@ -114,6 +114,11 @@ def main():
     plt.xticks(rotation=90)
     plt.yticks(rotation=0)
     plt.tight_layout()
+    # Save diagram to extern directory
+    os.makedirs('extern', exist_ok=True)
+    img_path = os.path.join('extern', 'similarity_heatmap.png')
+    plt.savefig(img_path)
+    print(f"Diagram saved to {img_path}")
     if args.window:
         plt.show(block=True)
     else:
