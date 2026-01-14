@@ -9,7 +9,14 @@ import matplotlib.pyplot as plt
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
-model_name = 'all-MiniLM-L6-v2'
+
+model_name = 'all-mpnet-base-v2' # heavier, but has higher accuracy
+# possible models:
+# all-MiniLM-L6-v2, lighter
+# paraphrase-multilingual-mpnet-base-v2 (multilingual, high quality)
+# bge-base-en-v1.5 or bge-large-en-v1.5 (very strong for English, from BAAI)
+# code-specific: codellama, CodeBERT, or StarCoder (for code-only similarity)
+
 
 def extract_content(filepath, mode='all'):
     """
