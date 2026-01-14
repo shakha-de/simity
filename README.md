@@ -15,16 +15,19 @@ Notebook Similarity Checker for Plagiarism Detection
    git clone <your-repo-url>
    cd simity
    ```
-2. Install dependencies (Python >=3.11 recommended):
+2. Install dependencies (Python >=3.11 recommended) using [uv](https://github.com/astral-sh/uv):
+   ```bash
+   uv sync
+   ```
+   or use old, but still gold:
    ```bash
    pip install -r requirements.txt
-   # or use pyproject.toml with pip or poetry
    ```
 
 ## Usage
 
 ```bash
-python main.py <NOTEBOOK_ROOT_PATH> [--mode all|markdown|code]
+python main.py <NOTEBOOK_ROOT_PATH> [--mode all|markdown|code] [--window]
 ```
 
 - `<NOTEBOOK_ROOT_PATH>`: Root directory to search for Jupyter notebooks (`.ipynb`)
@@ -32,10 +35,11 @@ python main.py <NOTEBOOK_ROOT_PATH> [--mode all|markdown|code]
     - `all`: Compare both code and markdown
     - `markdown`: Compare only markdown cells
     - `code`: Compare only code cells
+- `--window`: Show the heatmap in a dedicated window (blocks execution)
 
 ### Example
 ```bash
-python main.py Exercise-1 --mode markdown
+python main.py Exercise-1 --mode markdown --window
 ```
 
 ## Output
@@ -50,6 +54,7 @@ python main.py Exercise-1 --mode markdown
 - matplotlib
 - scikit-learn
 - sentence-transformers
+- uv (for installation)
 
 ## License
 MIT
