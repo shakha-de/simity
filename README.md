@@ -12,7 +12,7 @@ Notebook Similarity Checker for Plagiarism Detection
 
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/shakha-de/simity.git
    cd simity
    ```
 2. Install dependencies (Python >=3.11 recommended) using [uv](https://github.com/astral-sh/uv):
